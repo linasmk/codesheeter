@@ -1,0 +1,140 @@
+/* ====================================
+=============== ELEMENTS ==============
+======================================= */
+/* ============ Imports ============= */
+@use "../base/functions" as *;
+@use "../base/mixins" as *;
+@use "../abstracts/colors" as c;
+@use "../abstracts/fonts" as f;
+@use "../abstracts/sizes" as s;
+@use "../abstracts/transitions" as t;
+/* ========== Form elements ========== */
+.h-input {
+  border: none;
+  outline: 1px solid c.$input-outline-color;
+  &:focus {
+    outline: 1px solid c.$input-outline-color-focused;
+  }
+}
+
+.h-checkbox {
+  margin: px-rem(10);
+}
+.h-select {
+  border: none;
+  appearance: none;
+  outline: 1px solid c.$input-outline-color;
+  &:focus {
+    outline: 1px solid c.$input-outline-color-focused;
+  }
+}
+.h-textarea {
+  border: none;
+  resize: none;
+  outline: 1px solid c.$input-outline-color;
+  &:focus {
+    outline: 1px solid c.$input-outline-color-focused;
+  }
+}
+
+/* ========= Text elements ======== */
+.h-link {
+  color: c.$link-color;
+  text-decoration: none;
+  cursor: pointer;
+  transition: t.$color-transition;
+  &:hover {
+    color: c.$link-color-hovered;
+  }
+  &:focus {
+    color: c.$link-color-focused;
+    outline: none;
+  }
+}
+/* ========= Buttons ======== */
+.h-button {
+  width: px-rem(100);
+  border: none;
+  color: c.$btn-txt-color;
+  background-color: c.$btn-bg-color;
+  transition: t.$bg-transition;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: c.$btn-bg-color-hovered;
+  }
+  @media (min-width: px-rem(480)) {
+    width: px-rem(120);
+  }
+  @media (min-width: px-rem(768)) {
+    width: px-rem(140);
+  }
+  @media (min-width: px-rem(1024)) {
+    width: px-rem(160);
+  }
+  @media (min-width: px-rem(1400)) {
+    width: px-rem(180);
+  }
+}
+.icon-btn--round {
+  width: px-rem(30);
+  height: px-rem(30);
+  border: none;
+  border-radius: px-rem(50);
+  padding: px-rem(5);
+  color: c.$btn-txt-color;
+  background-color: c.$btn-bg-color;
+  transition: t.$bg-transition;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: c.$btn-bg-color-hovered;
+  }
+}
+/* ========= Element holders ======== */
+.h-ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.h-input-group {
+  width: 100%;
+  height: auto;
+  @include v-flex(center, center);
+  @media (min-width: px-rem(768)) {
+    @include h-flex(space-between, center);
+  }
+}
+.h-checkbox-holder {
+  width: 100%;
+  @include h-flex(center, center);
+}
+.h-cards-holder {
+  @include increase-element-size(95%, s.$container-width-sizes, width);
+  margin: 0 auto;
+  @include v-flex(center, center);
+  @media (min-width: px-rem(768)) {
+    @include h-flex(space-between, flex-start);
+    flex-wrap: wrap;
+  }
+}
+.h-card {
+  width: 90%;
+  @include increase-element-size(
+    px-rem(10),
+    s.$box-elements-padding-sizes,
+    padding
+  );
+  @include v-flex(flex-start, flex-start);
+  margin: px-rem(25) 0;
+  box-shadow: px-rem(5) px-rem(5) px-rem(25) rgba(c.$box-shadow-color, 0.5),
+    px-rem(5) px-rem(5) px-rem(25) rgba(c.$box-shadow-color, 0.5) inset;
+  @media (min-width: px-rem(768)) {
+    width: 48%;
+    min-height: 50vh;
+    max-height: 50vh;
+    overflow: auto;
+  }
+}

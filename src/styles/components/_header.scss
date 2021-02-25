@@ -1,0 +1,30 @@
+/* ============================================
+================= HEADER =================
+============================================ */
+/* ============ Imports ============= */
+@use "../base" as *;
+@use "../helpers" as *;
+@use "../abstracts/colors" as c;
+@use "../abstracts/fonts" as f;
+@use "../abstracts/sizes" as s;
+@use "../abstracts/transitions" as t;
+/* ============ Styles ============= */
+.header {
+  background-color: c.$primary-fg-color;
+  width: 100%;
+  height: auto;
+  @include v-flex(center, center);
+}
+.header__title-holder {
+  @include increase-element-size(95%, s.$container-width-sizes, width);
+}
+.header__title {
+  color: c.$title-color;
+  word-wrap: break-word;
+  text-align: center;
+  font-style: italic;
+}
+.header__title--italics {
+  @include increase-element-size(px-rem(36), s.$h1-font-sizes, font-size);
+  color: c.$title-secondary-color;
+}

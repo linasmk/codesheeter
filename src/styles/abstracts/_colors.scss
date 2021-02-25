@@ -1,0 +1,42 @@
+/* ========================================
+==================== COLORS ===============
+========================================== */
+
+/* ============== Plain Colors ===========
+============================================ */
+$white: #ffffff;
+$black: #000;
+$alice-blue: #f0f8ff;
+$inchworm: #d3ef64;
+$lavender: #d364e0;
+/* ============== Contextual Colors ================
+==================================================== */
+/* ==== Background and Foreground ==== */
+$primary-bg-color: $alice-blue;
+$primary-fg-color: $black;
+/* ========== Text  ============ */
+$title-color: $lavender;
+$title-secondary-color: $inchworm;
+$heading-txt-color: $black;
+$p-txt-color: $black;
+$input-txt-color: $black;
+$code-txt-color: $inchworm;
+/* ========== Links  ============ */
+$link-color: $white;
+$link-color-hovered: scale-color($white, $lightness: -20%);
+$link-color-focused: $inchworm;
+/* ========== Buttons  ============ */
+$btn-txt-color: $white;
+$btn-bg-color: $lavender;
+$btn-bg-color-hovered: scale-color($lavender, $lightness: 20%);
+$btn-border-color-focused: $inchworm;
+/* ========== Borders  ============ */
+$border-color: $lavender;
+/* ========== Shadows ============ */
+$box-shadow-color: $black;
+$input-shadow-color: $white;
+/* ========== Inputs  ============ */
+$input-outline-color: $black;
+$input-outline-color-focused: $black;
+/* ========== Content Editable  ============ */
+$content-editable-true-bg-color: $white;

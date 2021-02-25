@@ -1,0 +1,15 @@
+/* ========================================
+================== Fonts ================
+=========================================*/
+
+/* ====== Imports ========= */
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@500&family=Rubik&family=Syne+Tactile&display=swap");
+
+/* ====== Plain Fonts ====== */
+$mukta: "Mukta", sans-serif;
+$rubik: "Rubik", sans-serif;
+$syne-tactile: "Syne Tactile", cursive;
+/* ====== Contextual Fonts ====== */
+$heading-font: $rubik;
+$txt-font: $mukta;
+$button-font: $syne-tactile;

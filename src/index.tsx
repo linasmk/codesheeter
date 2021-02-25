@@ -1,6 +1,8 @@
 import * as esbuild from "esbuild-wasm";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Fragment } from "react";
 import ReactDom from "react-dom";
+import "normalize.css";
+import "./styles/styles.scss";
 
 const App = () => {
   const ref = useRef<any>();
@@ -27,17 +29,26 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <textarea
-        value={input}
-        onChange={(e) => setInput(e.target.value)}></textarea>
-      <div>
-        <button type="button" onClick={onClick}>
-          Submit
-        </button>
-      </div>
-      <pre>{code}</pre>
-    </div>
+    <Fragment>
+      <header className="header">
+        <div className="header__title-holder">
+          <h1 className="header__title">
+            Code<span className="header__title--italics">Sheeter</span>
+          </h1>
+        </div>
+      </header>
+      <main role="main" className="main-content">
+        <textarea
+          value={input}
+          onChange={(e) => setInput(e.target.value)}></textarea>
+        <div>
+          <button type="button" onClick={onClick}>
+            Submit
+          </button>
+        </div>
+        <pre className="code">{code}</pre>
+      </main>
+    </Fragment>
   );
 };
 

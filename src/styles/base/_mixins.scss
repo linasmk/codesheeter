@@ -7,7 +7,7 @@
 @use "../abstracts/fonts" as f;
 @use "../abstracts/sizes" as s;
 @use "../abstracts/transitions" as t;
-
+/* ========== Mixins ========== */
 @mixin increase-element-size($initial-size, $list-of-sizes, $style-rule) {
   #{$style-rule}: $initial-size;
   @each $breakpoint in s.$breakpoints {

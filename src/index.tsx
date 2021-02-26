@@ -1,6 +1,7 @@
 import * as esbuild from "esbuild-wasm";
 import { useState, useEffect, useRef, Fragment } from "react";
 import ReactDom from "react-dom";
+import { unpkgPathPlugin } from "./plugins/unpkg-path-plugin";
 import "normalize.css";
 import "./styles/styles.scss";
 
@@ -18,11 +19,15 @@ const App = () => {
     if (!ref.current) {
       return;
     }
-    const result = await ref.current.transform(input, {
-      loader: "jsx",
-      target: "es2015",
+    const result = await ref.current.build({
+      entryPoints: ["index.js"],
+      bundle: true,
+      write: false,
+      plugins: [unpkgPathPlugin()],
     });
-    setCode(result.code);
+
+    //console.log(result);
+    setCode(result.outputFiles[0].text);
   };
   useEffect(() => {
     startService();
